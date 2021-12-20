@@ -1,0 +1,31 @@
+const student = (lastname, grades, category) => {
+ 	return {lastname, grades, category}
+}
+function generate_students (count) {
+	let students = []
+	for (let index = 0; index < count; index++) {
+		const lastname = `Lastname${index}`
+		const grades = [] 
+		for (let i = 0; i < 5; i++){
+			const grade = Math.floor(Math.random() * 5) + 1
+			grades.push (grade)
+		}
+		students.push (student(lastname, grades))
+	}
+  return students
+}
+		function define_category (students){
+			for (const index in students) {
+				if (students[index].grades.filter(grade => grade <= 2) != 0){
+					students[index].category = "Неуспевающий"
+        }else if (students[index].grades.filter(grade => grade < 5).length == 0){
+					students[index].category = "Отличник" 
+        }else if (students[index].grades.filter(grade => grade < 4).length == 0) {
+					students[index].category = "Хорошист"
+        }
+			}
+		}
+		let students_array = generate_students (10)
+		define_category(students_array)
+	  console.log (students_array)
+		

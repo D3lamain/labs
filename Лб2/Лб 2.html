@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>
+		Лабораторная работа №2
+	</title>
+<link rel="stylesheet" href="styles.css">
+<style type="text/css">
+body {
+	color: blue;
+	font-family: arial;
+	}
+.tabs {
+font-size: 0;
+}
+
+.tabs>input[type="radio"] {
+display: none;
+}
+
+.tabs>div {
+display: none;
+border: 1px solid #e0e0e0;
+padding: 10px 15px;
+font-size: 16px;
+}
+
+
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2,
+#tab-btn-3:checked~#content-3 {
+display: block;
+}
+
+.tabs>label {
+display: inline-block;
+text-align: center;
+vertical-align: middle;
+user-select: none;
+background-color: #f5f5f5;
+border: 1px solid #e0e0e0;
+padding: 2px 8px;
+font-size: 16px;
+line-height: 1.5;
+transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+cursor: pointer;
+position: relative;
+top: 1px;
+}
+
+.tabs>label:not(:first-of-type) {
+border-left: none;
+}
+
+.tabs>input[type="radio"]:checked+label {
+background-color: #fff;
+border-bottom: 1px solid #fff;
+}
+</style>
+
+<div class="tabs">
+<input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+<label for="tab-btn-1">Способы использования каскадных таблиц стилей</label>
+<input type="radio" name="tab-btn" id="tab-btn-2" value="">
+<label for="tab-btn-2">Селекторы CLASS и ID</label>
+<input type="radio" name="tab-btn" id="tab-btn-3" value="">
+<label for="tab-btn-3">Позиционирования и Плавающая модель</label>
+
+<div id="content-1">
+<body>
+		<p style="font-size: 20px; color: red; font-family: 'Times New Roman'; background-color: black;width:400px">
+		inline-описание (используется атрибут style)
+		</p>
+		<h2>С помощью контейнера &lt;style&gt; в секции заголовка</h2>
+		<h1>Подключенная стилевая таблица, расположенная во внешнем файле</h1>
+</body>
+</div>
+<div id="content-2">
+<body>
+		<div id="content">
+		Использование селектора ID, для демонстрации использования стилей
+		</div>
+		<div class="text">
+		Использование селектора CLASS, для демонстрации использования стилей
+		</div>
+</body>
+</div>
+<div id="content-3">
+<body>
+<div style="border: 1px double black; text-align: left; width: 100px; height: 55px; float: left">
+		Hello World <br> Hello World <br> Hello World
+		</div>
+		<p style="padding: 5px;">Пример<br>использования<br>плавающей<br>модели<br>(свойство float)</p>
+
+		<div style="position: absolute; top: 300px; left: 
+		100px; border: 4px double black; height:20%; 
+		width:30%; color: black;"> Пример использования абсолютного и относительного позиционирования
+		<div class="absolute_box"> Абсолютное</div>
+		<div class="relative_box"> Относительное</div>
+		<div class="relative_box" style="top: 40px;">
+		Относительное 2</div>
+		</div>
+</body>
+</div>
+</div>
+</head>
